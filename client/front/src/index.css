@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+:root {
+  
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Lato", sans-serif;
+  --font-weight-light: 300;
+  --font-weight-bold: 700;
+  }
+
+  *{
+    background-color: rgb(199, 222, 255);
+  }
