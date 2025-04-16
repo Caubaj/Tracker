@@ -1,7 +1,9 @@
 
 import './Tracker.css'; 
-import TrackerHeader from "./components/TrackerHeader";
-import Progress from './components/Progress';
+
+import TrackerHeader from "./TrackerComponents/TrackerHeader";
+import Progress from './TrackerComponents/Progress';
+import NutrientsGoals from './TrackerComponents/NutrientsGoals';
 import { userNutrientGoals, userInfo } from '../../DATA/UserData';
 import { useEffect, useState } from 'react';
 
@@ -9,6 +11,8 @@ const Tracker = ( {id} ) => {
 
 
     const [userData, setUserData] = useState(null)
+
+    const [userGoals, setUserGoals] = useState(null)
 
     useEffect( () => {
         if (!id) return; // prevent running if id is not ready!
@@ -20,7 +24,8 @@ const Tracker = ( {id} ) => {
                 const mergeData = {...userInfoData, ...nutrientGoalData}
             
                 setUserData(mergeData);
-                console.log(userData)
+                setUserGoals(nutrientGoalData)
+               
 
             }catch (err)
             {
@@ -38,10 +43,10 @@ const Tracker = ( {id} ) => {
 
         <div id='tracker-container'>
               <TrackerHeader className= "username-container" username = {userData?.username} />
-              <Progress className = "progress-container" calorieGoal = {userData?.goal_calories}  proteinGoal = {userData?.goal_protein} />
+              <Progress className = "progress-container" calorieGoal = {userData?.goal_calories}  />
+              <NutrientsGoals Protein = {userData?.goal_protein} Carbs = {userData?.goal_carbs} Fats = {userData?.goal_carbs}/>
         </div>
     );
 };
-
 
 export default Tracker;

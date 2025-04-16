@@ -1,6 +1,6 @@
 import CircularProgressBar from "./CircularProgressBar";
 
-const Progress = ({className, calorieGoal, proteinGoal}) => {
+const Progress = ({className, calorieGoal}) => {
     return (
         <div className = {className} 
         style = {{ 
@@ -9,7 +9,7 @@ const Progress = ({className, calorieGoal, proteinGoal}) => {
             maxWidth: "100%",
             overflow: "hidden",
             boxSizing: "border-box",
-            
+            padding: "10px"
             }}
         >
             <div  style = {{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "50%"}}>
